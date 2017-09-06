@@ -34,10 +34,10 @@ class FileStorage:
             return FileStorage.__objects
         else:
             __single_class = {}
-            for k, v in FileStorage.__objects:
+            for k, v in FileStorage.__objects.items():
                 split_key = k.split('.')
                 if split_key[0] == cls:
-                    __single_class[k] = vs
+                    __single_class[k] = v
             return __single_class
 
     def new(self, obj):
