@@ -10,8 +10,8 @@ app = Flask(__name__)
 
 
 # map root to function
-@app.route('/')
-def hello_route(strict_slashes=False):
+@app.route('/', strict_slashes=False)
+def hello_route():
     '''Function to return "Hello HBNB!" when requesting root '''
     return 'Hello HBNB!'
 
