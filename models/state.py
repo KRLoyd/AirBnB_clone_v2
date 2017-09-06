@@ -9,6 +9,7 @@ from sqlalchemy.orm import relationship
 
 from models.base_model import BaseModel, Base
 
+
 class State(BaseModel, Base):
     """State class handles all application states"""
 
@@ -28,11 +29,12 @@ class State(BaseModel, Base):
     if getenv("HBNB_TYPE_STORAGE") != "db":
         @property
         def cities(self):
-            """"""
+            """Function to return the list of City objects linked to the current
+            State"""
             from models import storage
             city_list = []
             cities_dict = storage.all(cls="City")
-            for k,v in cities_dict.items():
+            for k, v in cities_dict.items():
                 if v.get("state_id") == self.id:
                     city_list.append(v)
             return city_list
