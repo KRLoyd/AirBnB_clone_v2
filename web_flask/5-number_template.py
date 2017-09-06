@@ -8,6 +8,7 @@ Includes the following routes:
 - /c/<text>
 - /python/<text>
 - /number/<n>
+- /number_template/<n>
 '''
 # Import Flask and render_template
 from flask import Flask
