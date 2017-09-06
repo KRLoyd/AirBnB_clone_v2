@@ -30,7 +30,7 @@ class FileStorage:
 
     def all(self, cls=None):
         """returns private attribute: __objects"""
-        if cls == None:
+        if cls is None:
             return FileStorage.__objects
         else:
             __single_class = {}
