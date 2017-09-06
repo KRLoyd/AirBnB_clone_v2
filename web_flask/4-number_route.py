@@ -53,7 +53,7 @@ def python_route(text='is cool'):
 
 
 # Map /number/<n>
-@app.route('/number/<int:n>')
+@app.route('/number/<int:n>', strict_slashes=False)
 def number_route(n):
     '''Function that displays "<passed number> is a number" when requesting
 /number/<n>.
