@@ -6,7 +6,7 @@ Includes the following routes:
 - root (/)
 - /hbnb
 - /c/<text>
-- /python/(<text>)
+- /python/<text>
 '''
 # Import Flask
 from flask import Flask
