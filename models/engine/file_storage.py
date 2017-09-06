@@ -30,7 +30,15 @@ class FileStorage:
 
     def all(self, cls=None):
         """returns private attribute: __objects"""
-        return FileStorage.__objects
+        if cls == None:
+            return FileStorage.__objects
+        else:
+            __single_class = {}
+            for k, v in FileStorage.__objects:
+                split_key = k.split('.')
+                if split_key[0] == cls:
+                    __single_class[k] = vs
+            return __single_class
 
     def new(self, obj):
         """sets / updates in __objects the obj with key <obj class name>.id"""
@@ -72,3 +80,7 @@ class FileStorage:
             if obj.id == k.split(".")[1] and k.split(".")[0] in str(obj):
                 FileStorage.__objects.pop(k, None)
                 self.save()
+
+    def close(self):
+        """calls reload() function"""
+        self.reload()
