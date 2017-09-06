@@ -101,4 +101,4 @@ class DBStorage:
         """
         calls remove() on self.__session
         """
-        remove(self.__session)
+        self.__session.remove()
