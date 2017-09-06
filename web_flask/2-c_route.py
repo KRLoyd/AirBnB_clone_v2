@@ -35,7 +35,7 @@ def c_route(text):
     Spaces replace underscore symbols.
     '''
     spaced_text = text.replace('_', ' ')
-    return 'C %s' % spaced_text
+    return 'C {}'.format(spaced_text)
 
 # Run app if __main__
 if __name__ == "__main__":
