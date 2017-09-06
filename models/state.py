@@ -8,7 +8,6 @@ from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
 
 from models.base_model import BaseModel, Base
-from models.engine.file_storage import all
 
 class State(BaseModel, Base):
     """State class handles all application states"""
@@ -30,8 +29,9 @@ class State(BaseModel, Base):
         @property
         def cities(self):
             """"""
+            from models import storage
             city_list = []
-            cities_dict = all(cls="City")
+            cities_dict = storage.all(cls="City")
             for k,v in cities_dict.items():
                 if v.get("state_id") == self.id:
                     city_list.append(v)
