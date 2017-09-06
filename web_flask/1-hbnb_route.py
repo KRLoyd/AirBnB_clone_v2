@@ -17,7 +17,7 @@ def root_route():
 
 
 # Map /hbnb
-@app.route('/hbnb')
+@app.route('/hbnb', strict_slashes=False)
 def hbnb_route():
     '''Function to display "HBNB" when requesting /hbnb.'''
     return 'HBNB'

@@ -22,14 +22,14 @@ def root_route():
 
 
 # Map /hbnb
-@app.route('/hbnb')
+@app.route('/hbnb', strict_slashes=False)
 def hbnb_route():
     '''Function to display "HBNB" when requesting /hbnb.'''
     return 'HBNB'
 
 
 # Map /c/<text>
-@app.route('/c/<text>')
+@app.route('/c/<text>', strict_slashes=False)
 def c_route(text):
     '''Function to display "C" followed by the value of variable text.
     Spaces replace underscore symbols.
